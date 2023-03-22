@@ -1,4 +1,8 @@
-let num = Math.floor(Math.random() * 20) + 1;
+// let num = Math.floor(Math.random() * 20) + 1;
+
+// Prompt for user-input to set a max number
+let num = prompt("Please pick a number");
+ 
 
 console.log(num);
 
