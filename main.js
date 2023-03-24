@@ -3,7 +3,7 @@ let valid_input = false;
 let input_num, input;
 
 while(!valid_input) {
-    input = window.prompt("Please pick a number greater than 1");
+    input = window.prompt("Please pick a number greater than 1.");
 
     input_num = Math.round(Number(input));
 
