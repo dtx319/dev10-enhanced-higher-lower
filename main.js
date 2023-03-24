@@ -12,7 +12,7 @@ while(!valid_input) {
     } else {
         alert("Please try again.");
     }
-}
+};
 
 // test that max number in range is assigned appropriately
 console.log(input_num);
