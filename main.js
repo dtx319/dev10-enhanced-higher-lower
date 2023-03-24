@@ -56,7 +56,7 @@ function do_guess() {
     } else {
         guessesArray.push(guess);
         message.innerHTML = "You got it! It took you " + guessesArray.length + " tries! Your guesses were " + guessesArray.join(', ') + "."
-    }
+    };
 
     // test that the guesses are getting pushed to the array
     console.log(guessesArray);
