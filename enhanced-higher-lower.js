@@ -1,5 +1,3 @@
-
-
 // Prompt for user-input to set a max number
 let valid_input = false;
 let input_num, input;
@@ -16,25 +14,21 @@ while(!valid_input) {
     }
 }
 
-
-// Test that max number in range is assigned appropriately
+// test that max number in range is assigned appropriately
 console.log(input_num);
 
-
-// Dynamic text that displays range based on prompt input
+// display dynamic text of range based on prompt input
 let range = document.getElementById("range");
 
 range.innerHTML = "Guess a number between 1 and " + input_num + '.'
 
-
 // select random number within range
 let num = Math.floor(Math.random() * input_num) + 1;
-
 
 // test that randomized number was assigned appropriately
 console.log(num);
 
-// setting up empty array to capture guesses
+// set up of empty array to capture guesses
 let guessesArray = [];
 
 // let them guess!
@@ -43,7 +37,6 @@ function do_guess() {
 
     // test that guess is being assigned properly
     console.log(guess);
-
 
     // display messages based on guess
     let message = document.getElementById("message");
@@ -54,10 +47,10 @@ function do_guess() {
         message.innerHTML = "You've already guessed that number. Try again!"
     } else if (guess > input_num || guess < 1 ) { // range validation
         message.innerHTML = "You are out of range! Try again!";
-    } else if (guess < num) { // lower number + capture of guess
+    } else if (guess < num) { // record guess of lower number
         message.innerHTML = "No, try a higher number.";
         guessesArray.push(guess);
-    } else if (guess > num) { // higher number + capture of guess
+    } else if (guess > num) { // record guess of higher number
         message.innerHTML = "No, try a lower number.";
         guessesArray.push(guess);
     } else {
@@ -65,6 +58,6 @@ function do_guess() {
         message.innerHTML = "You got it! It took you " + guessesArray.length + " tries! Your guesses were " + guessesArray.join(', ') + "."
     }
 
-    // test: the guesses are getting pushed to the array
+    // test that the guesses are getting pushed to the array
     console.log(guessesArray);
 };
