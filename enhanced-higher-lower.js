@@ -1,6 +1,6 @@
 
 
-// Part 1: Prompt for user-input to set a max number
+// Prompt for user-input to set a max number
 let valid_input = false;
 let input_num, input;
 
@@ -12,16 +12,16 @@ while(!valid_input) {
     if (!isNaN(input_num) && input_num > 1) {
         valid_input = true;
     } else {
-        alert("Please try again");
+        alert("Please try again.");
     }
 }
 
 
-// test!
+// Test that max number in range is assigned appropriately
 console.log(input_num);
 
 
-// dynamic text that displays range based on prompt input
+// Dynamic text that displays range based on prompt input
 let range = document.getElementById("range");
 
 range.innerHTML = "Guess a number between 1 and " + input_num + '.'
@@ -31,7 +31,7 @@ range.innerHTML = "Guess a number between 1 and " + input_num + '.'
 let num = Math.floor(Math.random() * input_num) + 1;
 
 
-// test!
+// test that randomized number was assigned appropriately
 console.log(num);
 
 // setting up empty array to capture guesses
@@ -41,7 +41,7 @@ let guessesArray = [];
 function do_guess() {
     let guess = Math.round(Number(document.getElementById("guess").value));
 
-    // test!
+    // test that guess is being assigned properly
     console.log(guess);
 
 
@@ -62,9 +62,9 @@ function do_guess() {
         guessesArray.push(guess);
     } else {
         guessesArray.push(guess);
-        message.innerHTML = "You got it! It took you " + guessesArray.length + " tries! Here are your guesses: " + guessesArray.join(', ') + "."
+        message.innerHTML = "You got it! It took you " + guessesArray.length + " tries! Your guesses were " + guessesArray.join(', ') + "."
     }
 
-    // test!
+    // test: the guesses are getting pushed to the array
     console.log(guessesArray);
 };
