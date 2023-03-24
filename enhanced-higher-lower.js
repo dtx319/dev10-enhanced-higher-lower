@@ -41,25 +41,30 @@ let guessesArray = [];
 function do_guess() {
     let guess = Math.round(Number(document.getElementById("guess").value));
 
+    // test!
     console.log(guess);
 
+
+    // display messages based on guess
     let message = document.getElementById("message");
 
-    if (isNaN(guess)) {
+    if (isNaN(guess)) { // number validation
         message.innerHTML = "That is not a number!"
-    } else if (guessesArray.includes(guess) == true) {
+    } else if (guessesArray.includes(guess) == true) { // duplicate validation 
         message.innerHTML = "You've already guessed that number. Try again!"
-    } else if (guess > input_num || guess < 1 ) {
+    } else if (guess > input_num || guess < 1 ) { // range validation
         message.innerHTML = "You are out of range! Try again!";
-    } else if (guess < num) {
+    } else if (guess < num) { // lower number + capture of guess
         message.innerHTML = "No, try a higher number.";
         guessesArray.push(guess);
-    } else if (guess > num) {
+    } else if (guess > num) { // higher number + capture of guess
         message.innerHTML = "No, try a lower number.";
         guessesArray.push(guess);
     } else {
-        message.innerHTML = "You got it!";
+        guessesArray.push(guess);
+        message.innerHTML = "You got it! It took you " + guessesArray.length + " tries! Here are your guesses: " + guessesArray.join(', ') + "."
     }
 
+    // test!
     console.log(guessesArray);
-}
+};
